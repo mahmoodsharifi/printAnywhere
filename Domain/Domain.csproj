@@ -5,4 +5,8 @@
     <Version>1.1.0</Version>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0-rc.1.20451.14" />
+  </ItemGroup>
+
 </Project>

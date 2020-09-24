@@ -19,6 +19,35 @@ namespace Infrastructure.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0-rc.1.20451.13");
 
+            modelBuilder.Entity("Domain.Entities.PrintWork", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PaidWhen")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("PrintStartWhen")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("PrinterId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("WorkFinishWhen")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PrinterId");
+
+                    b.ToTable("PrintWorks");
+                });
+
             modelBuilder.Entity("Domain.Entities.Printer", b =>
                 {
                     b.Property<int>("Id")
@@ -80,6 +109,15 @@ namespace Infrastructure.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Domain.Entities.PrintWork", b =>
+                {
+                    b.HasOne("Domain.Entities.Printer", "Printer")
+                        .WithMany()
+                        .HasForeignKey("PrinterId");
+
+                    b.Navigation("Printer");
                 });
 #pragma warning restore 612, 618
         }

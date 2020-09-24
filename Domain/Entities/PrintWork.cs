@@ -2,20 +2,21 @@
 // This product is protected by copyright and intellectual property laws in the United States and other countries as well as by international treaties.
 // VMware products are covered by one or more patents listed at http://www.vmware.com/go/patents
 
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class Printer
+    public class PrintWork
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string Latitude { get; set; }
-        public string Longitude { get; set; }
-        public int PrintQuotaPerDay { get; set; }
-        public int RemainingQuotaForTheDay { get; set; }
-        public string AvailabilityCron { get; set; }
+        public string FileName { get; set; }
+        public Printer Printer { get; set; }
+        public DateTime PaidWhen { get; set; }
+        public DateTime PrintStartWhen { get; set; }
+        public DateTime WorkFinishWhen { get; set; }
     }
 }

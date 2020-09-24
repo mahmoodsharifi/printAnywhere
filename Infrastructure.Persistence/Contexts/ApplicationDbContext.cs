@@ -25,6 +25,7 @@ namespace Infrastructure.Persistence.Contexts
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Printer> Printers { get; set; }
+        public DbSet<PrintWork> PrintWorks { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {

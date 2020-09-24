@@ -32,6 +32,7 @@ namespace Infrastructure.Persistence
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
             services.AddTransient<IProductRepositoryAsync, ProductRepositoryAsync>();
             services.AddTransient<IPrinterRepositoryAsync, PrinterRepositoryAsync>();
+            services.AddTransient<IPrintWorkRepositoryAsync, PrintWorkRepositoryAsync>();
             #endregion
         }
     }

@@ -2,16 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Authors>Mukesh Murugan</Authors>
-    <Company>codewithmukesh</Company>
-    <RepositoryUrl>https://github.com/iammukeshm/CleanArchitecture.WebApi</RepositoryUrl>
+    <Authors>Mahmoud Sharifi</Authors>
+    <Company>MahmoudSharifi</Company>
+    <RepositoryUrl>https://github.com/mahmoodsharifi/printAnywhere</RepositoryUrl>
     <RepositoryType>Public</RepositoryType>
-    <PackageProjectUrl>https://www.codewithmukesh.com/blog/aspnet-core-webapi-clean-architecture/</PackageProjectUrl>
-    <Version>1.1.0</Version>
+    <PackageProjectUrl>https://github.com/mahmoodsharifi/printAnywhere</PackageProjectUrl>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>CleanArchitecture.WebApi.xml</DocumentationFile>
+    <DocumentationFile>PrintAnywhere.WebApi.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 

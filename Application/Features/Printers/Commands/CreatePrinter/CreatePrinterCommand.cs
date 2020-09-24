@@ -14,8 +14,6 @@ namespace Application.Features.Printers.Commands.CreatePrinter
 {
     public partial class CreatePrinterCommand : IRequest<Response<int>>
     {
-
-        public int Id { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
         public int PrintQuotaPerDay { get; set; }
