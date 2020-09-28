@@ -20,7 +20,7 @@ namespace WebApi.Controllers.v1
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetAllPrintersParameter filter)
         {
-            return Ok(await Mediator.Send(new GetAllPrintersParameter() { PageSize = filter.PageSize, PageNumber = filter.PageNumber  }));
+            return Ok(await Mediator.Send(new GetAllPrintersQuery() { PageSize = filter.PageSize, PageNumber = filter.PageNumber  }));
         }
         
         // GET api/<controller>/5
