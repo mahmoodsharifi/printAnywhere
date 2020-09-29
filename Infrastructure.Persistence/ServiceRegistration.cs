@@ -9,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Application.Features.PrintWorks.Commands.CreatePrintWork;
+using Application.Wrappers;
+using MediatR;
 
 namespace Infrastructure.Persistence
 {
@@ -33,6 +36,7 @@ namespace Infrastructure.Persistence
             services.AddTransient<IProductRepositoryAsync, ProductRepositoryAsync>();
             services.AddTransient<IPrinterRepositoryAsync, PrinterRepositoryAsync>();
             services.AddTransient<IPrintWorkRepositoryAsync, PrintWorkRepositoryAsync>();
+            services.AddTransient<IRequestHandler<UploadPrintWorkCommand, Response<byte[]>>, UploadPrintWorkCommandHandler>();
             #endregion
         }
     }
